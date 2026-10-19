@@ -1,1 +1,22 @@
-<h1>Hello there</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Got Mail</title>
+</head>
+<body>
+    <audio id="mailSound" autoplay>
+        <source src=".\youGotmail.wav" type="audio/wav">
+    </audio>
+
+    <script>
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('mailSound');
+            audio.play().catch(err => {
+                console.log('Autoplay blocked by browser:', err);
+            });
+        });
+    </script>
+</body>
+</html>
