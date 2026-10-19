@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You Got Mail</title>
+    <title>Coursework</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <audio id="mailSound" autoplay>
+
+    <button onclick="playSound()">Reveal Coursework</button>
+
+    <audio id="mailSound">
         <source src="https://raw.githubusercontent.com/TECKERZ101/titan/main/youGotmail.wav" type="audio/wav">
     </audio>
 
     <script>
-        window.addEventListener('load', () => {
-            const audio = document.getElementById('mailSound');
-            audio.play().catch(err => {
-                console.log('Autoplay blocked by browser:', err);
-            });
-        });
+        function playSound() {
+            document.getElementById('mailSound').play();
+        }
     </script>
+
 </body>
 </html>
