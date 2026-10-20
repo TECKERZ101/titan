@@ -6,26 +6,94 @@
     <title>Coursework</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #f5f5f5;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #0f172a 0%,
+                #111827 50%,
+                #1e293b 100%
+            );
+
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #f8fafc;
+            font-weight: 300;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
         button {
-            padding: 15px 30px;
+            padding: 16px 36px;
             font-size: 18px;
+            font-weight: 600;
+
+            color: white;
+            background: linear-gradient(
+                135deg,
+                #3b82f6,
+                #2563eb
+            );
+
+            border: none;
+            border-radius: 14px;
+
             cursor: pointer;
+
+            box-shadow:
+                0 10px 30px rgba(37, 99, 235, 0.35);
+
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 15px 40px rgba(37, 99, 235, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+
+            padding: 40px 60px;
         }
     </style>
 </head>
 <body>
 
-    <button onclick="playSound()">Reveal Coursework</button>
+    <div class="card">
+        <h1>Coursework Portal</h1>
+
+        <button onclick="playSound()">
+            Reveal Coursework
+        </button>
+    </div>
 
     <audio id="mailSound">
         <source src="https://raw.githubusercontent.com/TECKERZ101/titan/main/youGotmail.wav" type="audio/wav">
@@ -33,7 +101,7 @@
 
     <script>
         function playSound() {
-            document.getElementById('mailSound').play();
+            document.getElementById("mailSound").play();
         }
     </script>
 
